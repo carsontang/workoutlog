@@ -1,4 +1,7 @@
 Workoutlog::Application.routes.draw do
+  resources :lifts
+
+
   resources :workouts
 
 
