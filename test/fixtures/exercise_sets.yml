@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  exercise: 
+  number_of_reps: 1
+  number_of_sets: 1
+  weight: 1
+
+two:
+  exercise: 
+  number_of_reps: 1
+  number_of_sets: 1
+  weight: 1
