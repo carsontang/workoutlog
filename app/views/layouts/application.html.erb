@@ -8,7 +8,9 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-<%= yield %>
-
+  <div class="container">
+    <%= render 'layouts/notice' %>
+    <%= yield %>
+  </div>
 </body>
 </html>
