@@ -1,0 +1,43 @@
+       static_pages_home GET    /static_pages/home(.:format)      static_pages#home
+        new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
+            user_session POST   /users/sign_in(.:format)          devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
+           user_password POST   /users/password(.:format)         devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)     devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
+                         PUT    /users/password(.:format)         devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)           devise/registrations#cancel
+       user_registration POST   /users(.:format)                  devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)          devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)             devise/registrations#edit
+                         PUT    /users(.:format)                  devise/registrations#update
+                         DELETE /users(.:format)                  devise/registrations#destroy
+           exercise_sets GET    /exercise_sets(.:format)          exercise_sets#index
+                         POST   /exercise_sets(.:format)          exercise_sets#create
+        new_exercise_set GET    /exercise_sets/new(.:format)      exercise_sets#new
+       edit_exercise_set GET    /exercise_sets/:id/edit(.:format) exercise_sets#edit
+            exercise_set GET    /exercise_sets/:id(.:format)      exercise_sets#show
+                         PUT    /exercise_sets/:id(.:format)      exercise_sets#update
+                         DELETE /exercise_sets/:id(.:format)      exercise_sets#destroy
+               exercises GET    /exercises(.:format)              exercises#index
+                         POST   /exercises(.:format)              exercises#create
+            new_exercise GET    /exercises/new(.:format)          exercises#new
+           edit_exercise GET    /exercises/:id/edit(.:format)     exercises#edit
+                exercise GET    /exercises/:id(.:format)          exercises#show
+                         PUT    /exercises/:id(.:format)          exercises#update
+                         DELETE /exercises/:id(.:format)          exercises#destroy
+                   lifts GET    /lifts(.:format)                  lifts#index
+                         POST   /lifts(.:format)                  lifts#create
+                new_lift GET    /lifts/new(.:format)              lifts#new
+               edit_lift GET    /lifts/:id/edit(.:format)         lifts#edit
+                    lift GET    /lifts/:id(.:format)              lifts#show
+                         PUT    /lifts/:id(.:format)              lifts#update
+                         DELETE /lifts/:id(.:format)              lifts#destroy
+                workouts GET    /workouts(.:format)               workouts#index
+                         POST   /workouts(.:format)               workouts#create
+             new_workout GET    /workouts/new(.:format)           workouts#new
+            edit_workout GET    /workouts/:id/edit(.:format)      workouts#edit
+                 workout GET    /workouts/:id(.:format)           workouts#show
+                         PUT    /workouts/:id(.:format)           workouts#update
+                         DELETE /workouts/:id(.:format)           workouts#destroy
+                    root        /                                 static_pages#home

@@ -48,6 +48,7 @@ html,
 body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
+  margin: 0;
 }
 
 #wrap {
@@ -69,4 +70,18 @@ body {
 
 .container .credit {
   margin: 20px 0;
+}
+
+/* static_pages#home */
+.intro {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+a:visited.intro {
+  color: white;
+}
+
+.intro-img {
+  margin: 15px;
 }
