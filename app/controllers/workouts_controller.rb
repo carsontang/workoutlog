@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /workouts
   # GET /workouts.json
   def index
@@ -23,14 +24,14 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/new
   # GET /workouts/new.json
-  # def new
-  #   @workout = Workout.new
+  def new
+    @workout = current_user.workouts.build
 
-  #   respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @workout }
-  #   end
-  # end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @workout }
+    end
+  end
 
   # GET /workouts/1/edit
   def edit
