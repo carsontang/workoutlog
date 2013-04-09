@@ -8,9 +8,13 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <div class="container">
-    <%= render 'layouts/notice' %>
-    <%= yield %>
+  <div id="wrap">
+    <div class="container">
+      <%= render 'layouts/notice' %>
+      <%= yield %>
+    </div>
+    <div id="push"></div>
   </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
