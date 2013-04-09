@@ -2,7 +2,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,14 +23,14 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/new
   # GET /workouts/new.json
-  def new
-    @workout = Workout.new
+  # def new
+  #   @workout = Workout.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @workout }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: @workout }
+  #   end
+  # end
 
   # GET /workouts/1/edit
   def edit
@@ -40,10 +40,12 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
-    @workout = Workout.new(params[:workout])
+    @workout = current_user.workouts.build(params[:workout])
+    # @workout = Workout.new(params[:workout])
 
     respond_to do |format|
       if @workout.save
+        flash[:success] = "Workout created"
         format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
         format.json { render json: @workout, status: :created, location: @workout }
       else
