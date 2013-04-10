@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+WO.application = {
+  init: function() {}
+}
+
+$(document).ready(function() {
+  WO.init();
+});

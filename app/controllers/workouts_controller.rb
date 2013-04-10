@@ -6,8 +6,12 @@ class WorkoutsController < ApplicationController
     @workouts_by_date = current_user.workouts.group_by do |workout|
       Date.new(workout.workout_date.year, workout.workout_date.month, workout.workout_date.day)
     end
+    
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     
+    # TODO: When you hit Back on browser after you've clicked a date on the calendar, you don't
+    # return to the calendar.
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @workouts }
@@ -28,7 +32,11 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   # GET /workouts/new.json
   def new
-    @workout = current_user.workouts.build
+    if params[:date]
+      @workout = current_user.workouts.build(:workout_date => params[:date])
+    else
+      @workout = current_user.workouts.build
+    end
 
     respond_to do |format|
       format.html # new.html.erb
