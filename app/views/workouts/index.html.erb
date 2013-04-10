@@ -4,7 +4,7 @@
   <%= @date.strftime("%B %Y") %>   
   <%= link_to ">", date: @date.next_month %>
 </h2>
-<div class="wo-btn">
+<div class="wo-center">
 <%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn" %>
 </div>
 <%= calendar @date do |date| %>
