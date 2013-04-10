@@ -4,6 +4,10 @@
   <div class="intro-img">
   <img src="http://d3js.org/ex/nutrient.png" alt="Icon" />
   </div>
+  <% if user_signed_in? %>
+  <%= link_to "Go to workouts", workouts_path, :class => "btn btn-info wo-btn" %>
+  <% else %>
   <%= link_to "Create an account", new_user_registration_path, :class => "btn btn-info wo-btn" %>
+  <% end %>
 </div>
 </div>
