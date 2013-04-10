@@ -3,7 +3,9 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts_by_date = current_user.workouts.group_by(&:workout_date)
+    @workouts_by_date = current_user.workouts.group_by do |workout|
+      Date.new(workout.workout_date.year, workout.workout_date.month, workout.workout_date.day)
+    end
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     
     respond_to do |format|
