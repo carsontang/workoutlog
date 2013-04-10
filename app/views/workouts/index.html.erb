@@ -10,7 +10,7 @@
 <%= calendar @date do |date| %>
   <%= date.day %>
   <% if @workouts_by_date[date] %>
-    <ul>
+    <ul class="workout-list">
       <% @workouts_by_date[date].each do |workout| %>
         <li><%= link_to workout.workout_date.localtime.strftime("%I:%M %p"), workout %></li>
       <% end %>
