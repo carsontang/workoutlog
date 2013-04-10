@@ -3,8 +3,9 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = current_user.workouts
-
+    @workouts_by_date = current_user.workouts.group_by(&:workout_date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @workouts }

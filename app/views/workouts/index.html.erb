@@ -1,15 +1,25 @@
-<table>
-<% for i in 0..5 %>
-  <tr>
-    <td>i</td>
-    <td>i</td>
-    <td>i</td>
-    <td>i</td>
-    <td>i</td>
-  </tr>
+<div id="workouts">
+<h2 id="month">
+  <%= link_to "<", date: @date.prev_month %>
+  <%= @date.strftime("%B %Y") %>   
+  <%= link_to ">", date: @date.next_month %>
+</h2>
+<div class="wo-btn">
+<%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn" %>
+</div>
+<%= calendar @date do |date| %>
+  <%= date.day %>
+  <% if @workouts_by_date[date] %>
+    <ul>
+      <% @workouts_by_date[date].each do |workout| %>
+        <li><%= link_to 'Workout', workout %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
-</table>
+</div>
 
+<!--
 <h1>Listing workouts</h1>
 
 <table>
@@ -19,13 +29,12 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @workouts.each do |workout| %>
+<% @workouts_by_date.each do |workout| %>
   <tr>
-    <td><%= workout.workout_date %></td>
-    <td><%= link_to 'Show', workout %></td>
-    <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
-    <td><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td></td>
+    <td><%= link_to 'Show', '' %></td>
+    <td><%= link_to 'Edit', '' %></td>
+    <td><%= link_to 'Destroy', '', method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -33,3 +42,4 @@
 <br />
 
 <%= link_to 'New Workout', new_workout_path %>
+-->
