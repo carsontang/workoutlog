@@ -1,0 +1,5 @@
+$('.navigate-months').on('ajax:success', function(e, data, status, xhr) {
+  $('#month').html("<%= j render('month_header') %>");
+  $('.calendar').html("<%= j render('calendar') %>");
+  WO.workouts.index.init();
+});

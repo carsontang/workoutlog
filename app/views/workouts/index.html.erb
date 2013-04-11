@@ -1,27 +1,10 @@
 <div id="workouts">
-<h2 id="month">
-  <%= link_to "<", date: @date.prev_month %>
-  <%= @date.strftime("%B %Y") %>   
-  <%= link_to ">", date: @date.next_month %>
-</h2>
+<%= render "month_header" %>
 <div class="wo-center">
 <%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn" %>
+<!-- <%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn navigate-months", :remote => true %> -->
 </div>
-<%= calendar @date do |date| %>
-  <%= date.day %>
-  <% if @workouts_by_date[date] %>
-    <ul class="workout-list">
-      <% @workouts_by_date[date].each do |workout| %>
-        <li><%= link_to workout.workout_date.localtime.strftime("%I:%M %p"), workout %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <p class="new-workout">Add new workout</p>
-  <div class="date-info"><%= date %></div>
-<% end %>
+<%= render "calendar" %>
 </div>
 
-<!--
-
-<%= link_to 'New Workout', new_workout_path %>
--->
+<%= link_to 'New Workout', new_workout_path, :remote => true %>

@@ -1,0 +1,5 @@
+<h2 id="month">
+<%= link_to "<", workouts_path(:date => @date.prev_month), :remote => true, :class => "navigate-months" %>
+<%= @date.strftime("%B %Y") %>   
+<%= link_to ">", workouts_path(:date => @date.next_month), :remote => true, :class => "navigate-months" %>
+</h2>
