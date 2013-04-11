@@ -1,8 +1,7 @@
 <div id="workouts">
 <%= render "month_header" %>
 <div class="wo-center">
-<%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn" %>
-<!-- <%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn navigate-months", :remote => true %> -->
+<%= link_to "Today", workouts_path(:date => Date.today), :class => "btn btn-info wo-btn navigate-months", :remote => true %>
 </div>
 <%= render "calendar" %>
 </div>
