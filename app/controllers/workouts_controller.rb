@@ -59,7 +59,7 @@ class WorkoutsController < ApplicationController
     respond_to do |format|
       if @workout.save
         flash[:success] = "Workout created"
-        format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
+        format.html { redirect_to workouts_path, notice: 'Workout was successfully created.' }
         format.json { render json: @workout, status: :created, location: @workout }
       else
         format.html { render action: "new" }
