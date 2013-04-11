@@ -6,4 +6,4 @@
 <%= render "calendar" %>
 </div>
 
-<%= link_to 'New Workout', new_workout_path, :remote => true %>
+<%= link_to 'New Workout', new_workout_path(:date => Date.today) %>

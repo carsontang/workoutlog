@@ -9,15 +9,10 @@
   <% end %>
 
   <%= f.password_field :current_password, :class => "input-block-level", :placeholder => "Current password" %>
-
   <%= f.password_field :password, :autocomplete => "off", :class => "input-block-level", :placeholder => "New password" %>
-
   <%= f.password_field :password_confirmation, :class => "input-block-level", :placeholder => "New password confirmation" %>
-
   <div><%= f.submit "Update", :class => "btn btn-large btn-info" %></div>
 <% end %>
 
-<div class="form-signin form-cancel">
 <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "If you proceed, all of your information will be deleted. Are you sure?" }, :class => "btn btn-danger", :method => :delete %>
-</div>
 <%= link_to "Back", :back %>
