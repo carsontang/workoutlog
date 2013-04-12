@@ -3,6 +3,13 @@
 <p>
   <b>Workout date:</b>
   <%= @workout.workout_date %>
+  <% if @workout.exercises.any? %>
+  <ul>
+  <% @workout.exercises.each do |exercise| %>
+  <li><%= exercise.lift.lift_name %></li>
+  <% end %>
+  </ul>
+  <% end %>
 </p>
 
 

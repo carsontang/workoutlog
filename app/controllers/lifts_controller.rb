@@ -3,7 +3,7 @@ class LiftsController < ApplicationController
   # GET /lifts.json
   def index
     @lifts = Lift.all
-    @lift_names = Lift.find(:all, :select => :lift_name).map { |lift| lift.lift_name }
+    @lift_names = Lift.find(:all, :select => :lift_name).map(&:lift_name)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @lift_names }

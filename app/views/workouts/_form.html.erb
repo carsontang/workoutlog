@@ -19,10 +19,9 @@
 
   <!-- why isn't fields_for working with f.fields_for? where are my relations wrong -->
   <%= f.fields_for :exercises do |builder| %>
-  <fieldset>
-    <%= builder.text_field :lift_id %><br/>
-  </fieldset>
+    <%= render 'exercise_fields', f: builder %>
   <% end %>
+  <%= link_to_add_fields "Add Exercise", f, :exercises %>
 
   <div class="actions">
     <%= f.submit %>

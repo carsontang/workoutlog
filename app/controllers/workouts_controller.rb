@@ -54,8 +54,14 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
+    # debugger
+    # TODO: Clean up this params mess and make sure workouts#update allows multiple lift edit
     params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
-    params[:workout] = params[:workout].slice(:workout_date)
+    params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)
+    params[:workout][:exercises_attributes].each do |id, lift_name|
+      lift_name = params[:workout][:exercises_attributes]["#{id}"][:lift_id]
+      params[:workout][:exercises_attributes]["#{id}"][:lift_id] = Lift.find_by_lift_name(lift_name).id
+    end
     @workout = current_user.workouts.build(params[:workout])
 
     respond_to do |format|
@@ -73,6 +79,10 @@ class WorkoutsController < ApplicationController
   # PUT /workouts/1
   # PUT /workouts/1.json
   def update
+    params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
+    params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)
+    @lift_name = params[:workout][:exercises_attributes]["0"][:lift_id]
+    params[:workout][:exercises_attributes]["0"][:lift_id] = Lift.find_by_lift_name(@lift_name).id
     @workout = Workout.find(params[:id])
 
     respond_to do |format|
