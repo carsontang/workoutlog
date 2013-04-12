@@ -11,8 +11,8 @@
 
 <% @exercises.each do |exercise| %>
   <tr>
-    <td><%= exercise.lift %></td>
-    <td><%= exercise.workout %></td>
+    <td><%= exercise.lift.lift_name %></td>
+    <td><%= exercise.workout.workout_date %></td>
     <td><%= link_to 'Show', exercise %></td>
     <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
     <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>

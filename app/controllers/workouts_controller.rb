@@ -38,6 +38,7 @@ class WorkoutsController < ApplicationController
     else
       @workout = current_user.workouts.build
     end
+    @workout.exercises.build
 
     respond_to do |format|
       format.html # new.html.erb
