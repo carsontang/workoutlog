@@ -15,7 +15,8 @@
     <%= f.label :workout_date %><br />
     <%= f.text_field :workout_date, :value => @workout.workout_date.strftime('%A %B %d, %Y') %>
     <!-- add time to date -->
-    <%= f.text_field :workout_date, :id => "workout_workout_date_time", :class => "input-mini" %>
+    <!-- <%= f.text_field :workout_date, :id => "workout_workout_date_time", :class => "input-mini" %> -->
+    <input id="workout_time" class="input-small" name="workout[time]" type="text" placeholder="Enter time">
   </div>
   <div class="actions">
     <%= f.submit %>

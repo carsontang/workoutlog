@@ -53,13 +53,14 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
+    params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
+    params[:workout] = params[:workout].slice(:workout_date)
     @workout = current_user.workouts.build(params[:workout])
-    # @workout = Workout.new(params[:workout])
 
     respond_to do |format|
       if @workout.save
         flash[:success] = "Workout created"
-        format.html { redirect_to workouts_path, notice: 'Workout was successfully created.' }
+        format.html { redirect_to workouts_path, notice: "Workout was successfully created." }
         format.json { render json: @workout, status: :created, location: @workout }
       else
         format.html { render action: "new" }
