@@ -1,4 +1,5 @@
 class LiftsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /lifts
   # GET /lifts.json
   def index
