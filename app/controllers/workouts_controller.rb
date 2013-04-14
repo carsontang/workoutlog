@@ -38,7 +38,8 @@ class WorkoutsController < ApplicationController
     else
       @workout = current_user.workouts.build
     end
-    @workout.exercises.build
+    @exercise = @workout.exercises.build
+    @exercise.exercise_sets.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -54,7 +55,6 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
-    # debugger
     # TODO: Clean up this params mess and make sure workouts#update allows multiple lift edit
     params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
     params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)

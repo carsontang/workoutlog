@@ -2,6 +2,7 @@
 
 body {
   padding-top: 60px;
+  background-color: #fcfcfc;
 }
 
 .brand-nohover:hover {
@@ -181,4 +182,36 @@ a:visited.wo-btn {
 
 .ui-datepicker-header {
   background-image: linear-gradient(to bottom, white, #f2f2f2); 
+}
+
+/* exercise set widget */
+.widget {
+  background-color: white;
+  border: 2px solid #D5D5D5;
+  /*-webkit-border-radius: 2px 2px 0 0; */
+  /*-moz-border-radius: 2px 2px 0 0; */
+  border-radius: 10px 10px 5px 5px;
+  margin-bottom: 20px;
+  width: 30%;
+}
+
+.widget-header {
+  border-bottom: 1px solid black;
+  padding: 10px 10px 0px 10px;
+  background: -webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+  border-radius: 10px 10px 0 0;
+  /* box-shadow: 0 4px 4px -5px black; */
+}
+
+.widget-content {
+  padding: 10px;
+}
+
+.widget-content > p {
+  text-align: center;
+}
+
+.widget-form {
+  display: block;
+  text-align: center;
 }

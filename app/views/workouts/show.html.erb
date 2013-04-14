@@ -6,7 +6,21 @@
   <% if @workout.exercises.any? %>
   <ul class="sortable">
   <% @workout.exercises.each do |exercise| %>
-  <li><%= exercise.lift.lift_name %></li>
+  <div class="widget">
+    <div class="widget-header">
+      <p><%= exercise.lift.lift_name %></p>
+    </div>
+    <div class="widget-content">
+      <p>
+        <% exercise.exercise_sets.each do |exercise_set| %>
+        <%= exercise_set.weight %>lbs X <%= exercise_set.number_of_reps %> X <%= exercise_set.number_of_sets %><br />
+        <% end %>
+      </p>
+      <div class="widget-form">
+        <input type="text" class="input-medium exercise-set-info" placeholder="Weight">
+      </div>
+    </div>
+  </div>
   <% end %>
   </ul>
   <% end %>
