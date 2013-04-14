@@ -4,7 +4,7 @@
   <b>Workout date:</b>
   <%= @workout.workout_date %>
   <% if @workout.exercises.any? %>
-  <ul>
+  <ul class="sortable">
   <% @workout.exercises.each do |exercise| %>
   <li><%= exercise.lift.lift_name %></li>
   <% end %>

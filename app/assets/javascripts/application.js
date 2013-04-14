@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.datepicker
 //= require jquery.ui.autocomplete
+//= require jquery.ui.sortable
 //= require_tree .
 
 WO.application = {
