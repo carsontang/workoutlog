@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -6,19 +6,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="nav-collapse collapse">
+      <nav class="nav-collapse collapse">
         <%= link_to "Workoutapp", root_path, :class => "brand brand-nohover" %>
         <ul class="nav pull-right ">
           <% if user_signed_in? %>
-          <li><%= link_to "Workouts", workouts_path %></li>
+          <li><a href="<%= workouts_path %>"><i class="icon-calendar"></i> Workouts</a></li>
           <li><a href="<%= edit_user_registration_path %>"><i class="icon-edit"></i> Edit Profile</a></li>
-          <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+          <li><a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i> Logout</a></li>
           <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
         </ul>
-      </div><!--/.nav-collapse -->
+      </nav><!--/.nav-collapse -->
     </div>
   </div>
-</div>
+</header>
