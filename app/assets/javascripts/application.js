@@ -15,6 +15,8 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.autocomplete
 //= require jquery.ui.sortable
+//= require jquery.timepicker
+//= require html5shiv
 //= require_tree .
 
 WO.application = {

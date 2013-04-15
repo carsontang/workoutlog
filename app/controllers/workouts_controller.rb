@@ -57,6 +57,8 @@ class WorkoutsController < ApplicationController
   def create
     # debugger
     # TODO: Clean up this params mess and make sure workouts#update allows multiple lift edit
+    # TODO: Editing workouts should allow you to update workouts
+    # TODO: Switch times to local time
     params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
     params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)
     params[:workout][:exercises_attributes].each do |id, lift_name|
