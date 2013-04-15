@@ -55,6 +55,7 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
+    # debugger
     # TODO: Clean up this params mess and make sure workouts#update allows multiple lift edit
     params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
     params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)
@@ -62,6 +63,7 @@ class WorkoutsController < ApplicationController
       lift_name = params[:workout][:exercises_attributes]["#{id}"][:lift_id]
       params[:workout][:exercises_attributes]["#{id}"][:lift_id] = Lift.find_by_lift_name(lift_name).id
     end
+    
     @workout = current_user.workouts.build(params[:workout])
 
     respond_to do |format|

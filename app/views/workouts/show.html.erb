@@ -6,7 +6,7 @@
   <% if @workout.exercises.any? %>
   <ul class="sortable">
   <% @workout.exercises.each do |exercise| %>
-  <div class="widget">
+  <div class="widget widget-show">
     <div class="widget-header">
       <p><%= exercise.lift.lift_name %></p>
     </div>
@@ -16,9 +16,6 @@
         <%= exercise_set.weight %>lbs X <%= exercise_set.number_of_reps %> X <%= exercise_set.number_of_sets %><br />
         <% end %>
       </p>
-      <div class="widget-form">
-        <input type="text" class="input-medium exercise-set-info" placeholder="Weight">
-      </div>
     </div>
   </div>
   <% end %>

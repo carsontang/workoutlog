@@ -12,7 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :workout_date %><br />
     <%= f.text_field :workout_date, :value => @workout.workout_date.strftime('%A %B %d, %Y') %>
     <input id="workout_time" class="input-small" name="workout[time]" type="text" placeholder="Enter time">
   </div>
@@ -21,7 +20,6 @@
     <%= render 'exercise_fields', f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Exercise", f, :exercises %>
-
   <div class="actions">
     <%= f.submit %>
   </div>

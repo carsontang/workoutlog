@@ -192,7 +192,14 @@ a:visited.wo-btn {
   /*-moz-border-radius: 2px 2px 0 0; */
   border-radius: 10px 10px 5px 5px;
   margin-bottom: 20px;
-  width: 30%;
+}
+
+.widget-show {
+  width: 25%;
+}
+
+.widget-create {
+  width: 50%;
 }
 
 .widget-header {
