@@ -17,12 +17,16 @@
 //= require jquery.ui.sortable
 //= require jquery.timepicker
 //= require html5shiv
+//= require turbolinks
 //= require_tree .
 
 WO.application = {
   init: function() {}
 }
 
-$(document).ready(function() {
+var initAll = function() {
   WO.init();
-});
+};
+
+$(document).ready(initAll);
+$(document).on('page:load', initAll);
