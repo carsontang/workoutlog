@@ -223,3 +223,13 @@ a:visited.wo-btn {
   display: block;
   text-align: center;
 }
+
+#error_explanation {
+  color: #f00;
+}
+
+.field_with_errors {
+  display: inline;
+  @extend .control-group;
+  @extend .error;
+}

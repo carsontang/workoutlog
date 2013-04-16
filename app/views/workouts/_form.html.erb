@@ -1,8 +1,10 @@
+<!-- hack: replace all messages with your own, but try to see how to customize them -->
 <%= form_for(@workout) do |f| %>
   <% if @workout.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@workout.errors.count, "error") %> prohibited this workout from being saved:</h2>
-
+      <div class="alert alert-error">
+        Please fix the <%= pluralize(@workout.errors.count, "error") %> before saving this workout.
+      </div>
       <ul>
       <% @workout.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
