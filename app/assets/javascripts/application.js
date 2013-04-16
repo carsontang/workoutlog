@@ -16,7 +16,6 @@
 //= require jquery.ui.autocomplete
 //= require jquery.ui.sortable
 //= require jquery.timepicker
-//= require html5shiv
 //= require turbolinks
 //= require_tree .
 
