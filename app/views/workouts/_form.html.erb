@@ -15,7 +15,6 @@
 
   <div class="field">
     <%= f.text_field :workout_date, :value => @workout.workout_date.strftime('%A %B %d, %Y') %>
-    <input id="workout_time" class="input-small" name="workout[time]" type="text" placeholder="Enter time">
   </div>
 
   <%= f.fields_for :exercises do |builder| %>

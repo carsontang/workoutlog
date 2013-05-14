@@ -15,7 +15,8 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.autocomplete
 //= require jquery.ui.sortable
-//= require jquery.timepicker
+//= require jquery.ui.slider
+//= require jquery.ui.timepicker-addon
 //= require turbolinks
 //= require_tree .
 

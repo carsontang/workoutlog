@@ -59,8 +59,8 @@ class WorkoutsController < ApplicationController
     # TODO: Clean up this params mess and make sure workouts#update allows multiple lift edit
     # TODO: Editing workouts should allow you to update workouts
     # TODO: Switch times to local time
-    set_workout_date(params)
-    remove_workout_time(params)
+    # set_workout_date(params)
+    # remove_workout_time(params)
     set_lift_ids(params)
     
     @workout = current_user.workouts.build(params[:workout])
@@ -120,16 +120,5 @@ class WorkoutsController < ApplicationController
     params[:workout][:exercises_attributes].each do |id, lift_name|
       set_lift_id(id, params)
     end
-  end
-
-  # A little hack to combine inputs from jQuery datepicker and timepicker
-  def set_workout_date(params)
-    params[:workout][:workout_date] = "#{params[:workout][:workout_date]} #{params[:workout][:time]}"
-  end
-
-  # Because Workout does not include :time as an attribute,
-  # params[:workout] must remove :time
-  def remove_workout_time(params)
-    params[:workout] = params[:workout].slice(:workout_date, :exercises_attributes)
   end
 end
