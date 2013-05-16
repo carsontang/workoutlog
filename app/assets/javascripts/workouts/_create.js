@@ -1,9 +1,7 @@
 WO.workouts.create = {
   init: function() {
-    $("#workout_workout_date").datepicker({'dateFormat': 'DD MM dd, yy'});
-    $("#workout_time").timepicker({ 'scrollDefaultNow': true });
     $("#workout_workout_date").datetimepicker({
-      controlType: 'select'
+      controlType: 'select',
       dateFormat: 'DD MM dd, yy',
       timeFormat: 'hh:mm tt'
     });
@@ -16,6 +14,5 @@ WO.workouts.create = {
       $(this).before($(this).data('fields').replace(regexp, time));
       event.preventDefault();
     });
-    // $(".lift_ids").chosen();
   }
 };
