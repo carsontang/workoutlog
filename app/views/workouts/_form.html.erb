@@ -15,6 +15,7 @@
 
   <div class="field">
     <%= f.text_field :workout_date, :value => @workout.workout_date.strftime('%A %B %d, %Y') %>
+    <!--<%= f.text_field :workout_date, :value => @workout.workout_date.strftime('%m/%d/%Y') %>-->
   </div>
 
   <%= f.fields_for :exercises do |builder| %>
