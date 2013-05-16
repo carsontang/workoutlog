@@ -61,7 +61,13 @@ class WorkoutsController < ApplicationController
     # TODO: Switch times to local time
     # set_workout_date(params)
     # remove_workout_time(params)
-    set_lift_ids(params)
+    # set_lift_ids(params)
+
+    # user selects lift
+    # JavaScript then uses lift name and gets lift ID
+    # from JSON
+    # send lift ID over to controller
+    # http://railscasts.com/episodes/258-token-fields-revised?
     
     @workout = current_user.workouts.build(params[:workout])
 
@@ -111,14 +117,16 @@ class WorkoutsController < ApplicationController
 
   private
 
-  def set_lift_id(id, params)
-    lift_name = params[:workout][:exercises_attributes]["#{id}"][:lift_id]
-    params[:workout][:exercises_attributes]["#{id}"][:lift_id] = Lift.find_by_lift_name(lift_name).id
-  end
+  # TODO: Refactor so that Lift.find_by_lift_name is not used in controller
+  # perhaps add a callback in Lift model? page 150 of Rails Antipatterns will help
+  # def set_lift_id(id, params)
+  #   lift_name = params[:workout][:exercises_attributes]["#{id}"][:lift_id]
+  #   params[:workout][:exercises_attributes]["#{id}"][:lift_id] = Lift.find_by_lift_name(lift_name).id
+  # end
 
-  def set_lift_ids(params)
-    params[:workout][:exercises_attributes].each do |id, lift_name|
-      set_lift_id(id, params)
-    end
-  end
+  # def set_lift_ids(params)
+  #   params[:workout][:exercises_attributes].each do |id, lift_name|
+  #     set_lift_id(id, params)
+  #   end
+  # end
 end
