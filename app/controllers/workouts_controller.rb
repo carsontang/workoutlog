@@ -68,7 +68,7 @@ class WorkoutsController < ApplicationController
     # from JSON
     # send lift ID over to controller
     # http://railscasts.com/episodes/258-token-fields-revised?
-    
+    #debugger
     @workout = current_user.workouts.build(params[:workout])
 
     respond_to do |format|

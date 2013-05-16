@@ -18,6 +18,7 @@
 //= require jquery.ui.slider
 //= require jquery.ui.timepicker-addon
 //= require turbolinks
+//= require chosen-jquery
 //= require_tree .
 
 WO.application = {

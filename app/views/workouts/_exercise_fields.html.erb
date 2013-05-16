@@ -1,7 +1,8 @@
 <fieldset>
   <div class="widget widget-create">
     <div class="widget-header">
-    <%= f.text_field :lift_id, :placeholder => "Lift name" %><br/>
+    <!-- <%= f.text_field :lift_id, :placeholder => "Lift name" %><br/>-->
+    <%= f.collection_select :lift_id, Lift.all, :id, :lift_name, {}, { :class => "lift_ids" } %>
     </div>
     <div class="widget-content">
       <div class="widget-form">
