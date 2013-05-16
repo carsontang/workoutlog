@@ -1,12 +1,12 @@
 WO.workouts.create = {
   init: function() {
-    //$("#workout_workout_date").datepicker({'dateFormat': 'DD MM dd, yy'});
-    //$("#workout_time").timepicker({ 'scrollDefaultNow': true });
-    // $("#workout_workout_date").datetimepicker({
-    //   controlType: 'select'
-    //   // dateFormat: 'DD MM dd, yy',
-    //   // timeFormat: 'hh:mm tt'
-    // });
+    $("#workout_workout_date").datepicker({'dateFormat': 'DD MM dd, yy'});
+    $("#workout_time").timepicker({ 'scrollDefaultNow': true });
+    $("#workout_workout_date").datetimepicker({
+      controlType: 'select'
+      dateFormat: 'DD MM dd, yy',
+      timeFormat: 'hh:mm tt'
+    });
     // $("#workout_exercises_attributes_0_lift_id").autocomplete({
     //   source: "/lifts.json"
     // });
@@ -16,7 +16,6 @@ WO.workouts.create = {
       $(this).before($(this).data('fields').replace(regexp, time));
       event.preventDefault();
     });
-    $(".lift_ids").chosen();
-    alert("hello");
+    // $(".lift_ids").chosen();
   }
 };
