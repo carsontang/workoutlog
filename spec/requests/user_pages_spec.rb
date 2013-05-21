@@ -33,15 +33,4 @@ describe "User pages" do
 
     it { should have_title("| Sign up") }
   end
-
-  describe "signin page" do
-    before { visit new_user_session_path }
-    it { should have_title("| Sign in")}
-
-    context "with invalid information" do
-      before { click_button "Sign in" }
-
-      it { should have_selector('p.alert.alert-error', :text => "Invalid email or password.") }
-    end
-  end
 end
