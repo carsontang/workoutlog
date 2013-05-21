@@ -1,18 +1,18 @@
 Workoutlog::Application.routes.draw do
   root :to => 'static_pages#home'
-
-  devise_for :users,
-  :path => '',
-  :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout'
-  }
-  
+  devise_for :users
   resources :exercise_sets
   resources :exercises
   resources :lifts
   resources :workouts
 
+
+  # devise_for :users,
+  # :path => '',
+  # :path_names => {
+  #   :sign_in => 'login',
+  #   :sign_out => 'logout'
+  # }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
