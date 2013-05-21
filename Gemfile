@@ -8,6 +8,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'spork', '0.9.2'
+  gem 'factory_girl_rails', '4.1.0'
 end
 
 # Gems used only for assets and not required
